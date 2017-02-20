@@ -1,1 +1,2 @@
-# bio 
+# bioPython
+query over NCBI
