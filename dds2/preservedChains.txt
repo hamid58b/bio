@@ -32,6 +32,7 @@ chain[  796615.   798253.  3882374.  3884012.]
  'GCA_001702795.1_Fon015_genomic.fna.dds.txt',
  'GCA_001703125.1_FoMN14_genomic.fna.dds.txt']
 
+Following are the 30 subject files
 file: GCA_001703365.1_Fom016_genomic.fna.dds.txt
 Dstart= 4022.0 and Dend=5043.0 
 
