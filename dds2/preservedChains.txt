@@ -1,0 +1,86 @@
+Following is the chain in the query(Qstart=796615 ) then it is being covered by 26 files. 
+The program first print those 26 files then for each files prints name of the file following by DStart and DEnd
+Please let me know if we need more analysis.
+
+
+chain[  796615.   798253.  3882374.  3884012.]
+
+['GCA_001703365.1_Fom016_genomic.fna.dds.txt', 'GCA_001652425.1_ASM165242v1_genomic.fna.dds.txt', 'GCA_001519035.1_ASM151903v1_genomic.fna.dds.txt', 'GCA_001702955.1_Fol018_genomic.fna.dds.txt', 'GCA_000260195.2_FO_II5_V1_genomic.fna.dds.txt', 'GCA_001702995.1_Fol016_genomic.fna.dds.txt', 'GCA_001599515.1_JCM_11502_assembly_v001_genomic.fna.dds.txt', 'GCA_000315255.1_B14_02_genomic.fna.dds.txt', 'GCA_001023045.1_ASM102304v1_genomic.fna.dds.txt', 'GCA_000260235.2_FO_PHW815_V1_genomic.fna.dds.txt', 'GCA_001702495.1_Foc013_genomic.fna.dds.txt', 'GCA_001702845.1_Fon037_genomic.fna.dds.txt', 'GCA_001703175.1_Fol4287-Illumina_genomic.fna.dds.txt', 'GCA_001703265.1_Fom009_genomic.fna.dds.txt', 'GCA_001696625.1_C1HIR_9889_genomic.fna.dds.txt', 'GCA_001703295.1_Fom011_genomic.fna.dds.txt', 'GCA_000149955.2_ASM14995v2_genomic.fna.dds.txt', 'GCA_001703455.1_Foc011_genomic.fna.dds.txt', 'GCA_001703305.1_Fom010_genomic.fna.dds.txt', 'GCA_900067095.1_F._proliferatum_ET1_version_1_genomic.fna.dds.txt', 'GCA_001702715.1_Fon019_genomic.fna.dds.txt', 'GCA_000966635.1_Fus_gra_233423_v1_genomic.fna.dds.txt', 'GCA_001702745.1_Fon002_genomic.fna.dds.txt', 'GCA_001705295.1_ASM170529v1_genomic.fna.dds.txt', 'GCA_001702795.1_Fon015_genomic.fna.dds.txt', 'GCA_001703125.1_FoMN14_genomic.fna.dds.txt']
+
+file: GCA_001703365.1_Fom016_genomic.fna.dds.txt
+Dstart= 4022.0 and Dend=5043.0 
+
+file: GCA_001652425.1_ASM165242v1_genomic.fna.dds.txt
+Dstart= 23464.0 and Dend=24606.0 
+
+file: GCA_001519035.1_ASM151903v1_genomic.fna.dds.txt
+Dstart= 1124415.0 and Dend=1126102.0 
+
+file: GCA_001702955.1_Fol018_genomic.fna.dds.txt
+Dstart= 1.0 and Dend=1164.0 
+
+file: GCA_000260195.2_FO_II5_V1_genomic.fna.dds.txt
+Dstart= 1263223.0 and Dend=1264854.0 
+
+file: GCA_001702995.1_Fol016_genomic.fna.dds.txt
+Dstart= 1.0 and Dend=1039.0 
+
+file: GCA_001599515.1_JCM_11502_assembly_v001_genomic.fna.dds.txt
+Dstart= 2446913.0 and Dend=2448568.0 
+
+file: GCA_000315255.1_B14_02_genomic.fna.dds.txt
+Dstart= 31804.0 and Dend=33310.0 
+
+file: GCA_001023045.1_ASM102304v1_genomic.fna.dds.txt
+Dstart= 6.0 and Dend=1042.0 
+
+file: GCA_000260235.2_FO_PHW815_V1_genomic.fna.dds.txt
+Dstart= 43744.0 and Dend=44773.0 
+
+file: GCA_001702495.1_Foc013_genomic.fna.dds.txt
+Dstart= 25638.0 and Dend=27328.0 
+
+file: GCA_001702845.1_Fon037_genomic.fna.dds.txt
+Dstart= 28473.0 and Dend=29938.0 
+
+file: GCA_001703175.1_Fol4287-Illumina_genomic.fna.dds.txt
+Dstart= 24647.0 and Dend=25652.0 
+
+file: GCA_001703265.1_Fom009_genomic.fna.dds.txt
+Dstart= 82979.0 and Dend=84626.0 
+
+file: GCA_001696625.1_C1HIR_9889_genomic.fna.dds.txt
+Dstart= 2898.0 and Dend=4697.0 
+
+file: GCA_001703295.1_Fom011_genomic.fna.dds.txt
+Dstart= 327.0 and Dend=1376.0 
+
+file: GCA_000149955.2_ASM14995v2_genomic.fna.dds.txt
+Dstart= 3493.0 and Dend=4654.0 
+
+file: GCA_001703455.1_Foc011_genomic.fna.dds.txt
+Dstart= 28421.0 and Dend=30107.0 
+
+file: GCA_001703305.1_Fom010_genomic.fna.dds.txt
+Dstart= 465368.0 and Dend=467054.0 
+
+file: GCA_900067095.1_F._proliferatum_ET1_version_1_genomic.fna.dds.txt
+Dstart= 6408.0 and Dend=8003.0 
+
+file: GCA_001702715.1_Fon019_genomic.fna.dds.txt
+Dstart= 47787.0 and Dend=49474.0 
+
+file: GCA_000966635.1_Fus_gra_233423_v1_genomic.fna.dds.txt
+Dstart= 20682.0 and Dend=21873.0 
+
+file: GCA_001702745.1_Fon002_genomic.fna.dds.txt
+Dstart= 3.0 and Dend=1418.0 
+
+file: GCA_001705295.1_ASM170529v1_genomic.fna.dds.txt
+Dstart= 4333.0 and Dend=6100.0 
+
+file: GCA_001702795.1_Fon015_genomic.fna.dds.txt
+Dstart= 99910.0 and Dend=101293.0 
+
+file: GCA_001703125.1_FoMN14_genomic.fna.dds.txt
+Dstart= 1219.0 and Dend=2797.0 
