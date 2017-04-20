@@ -32,81 +32,83 @@ chain[  796615.   798253.  3882374.  3884012.]
  'GCA_001702795.1_Fon015_genomic.fna.dds.txt',
  'GCA_001703125.1_FoMN14_genomic.fna.dds.txt']
 
-Following are the 30 subject files
+Following are the 26 subject files:
+
 file: GCA_001703365.1_Fom016_genomic.fna.dds.txt
-Dstart= 4022.0 and Dend=5043.0 
+Chain 797080.0 798101.0 1004.0 1.0 4022.0 5043.0 
 
 file: GCA_001652425.1_ASM165242v1_genomic.fna.dds.txt
-Dstart= 23464.0 and Dend=24606.0 
+Chain 796566.0 797708.0 1341.0 1.0 23464.0 24606.0 
 
 file: GCA_001519035.1_ASM151903v1_genomic.fna.dds.txt
-Dstart= 1124415.0 and Dend=1126102.0 
+Chain 796566.0 798253.0 1911.0 1.0 1124415.0 1126102.0 
 
 file: GCA_001702955.1_Fol018_genomic.fna.dds.txt
-Dstart= 1.0 and Dend=1164.0 
+Chain 797052.0 798215.0 803.0 1.0 1.0 1164.0 
 
 file: GCA_000260195.2_FO_II5_V1_genomic.fna.dds.txt
-Dstart= 1263223.0 and Dend=1264854.0 
+Chain 796734.0 798365.0 2074.0 1.0 1263223.0 1264854.0 
 
 file: GCA_001702995.1_Fol016_genomic.fna.dds.txt
-Dstart= 1.0 and Dend=1039.0 
+Chain 796970.0 798008.0 723.0 1.0 1.0 1039.0 
 
 file: GCA_001599515.1_JCM_11502_assembly_v001_genomic.fna.dds.txt
-Dstart= 2446913.0 and Dend=2448568.0 
+Chain 796559.0 798214.0 1152.0 1.0 2446913.0 2448568.0 
 
 file: GCA_000315255.1_B14_02_genomic.fna.dds.txt
-Dstart= 31804.0 and Dend=33310.0 
+Chain 796625.0 798131.0 1179.0 1.0 31804.0 33310.0 
 
 file: GCA_001023045.1_ASM102304v1_genomic.fna.dds.txt
-Dstart= 6.0 and Dend=1042.0 
+Chain 797095.0 798131.0 594.0 1.0 6.0 1042.0 
 
 file: GCA_000260235.2_FO_PHW815_V1_genomic.fna.dds.txt
-Dstart= 43744.0 and Dend=44773.0 
+Chain 796559.0 797588.0 1300.0 1.0 43744.0 44773.0 
 
 file: GCA_001702495.1_Foc013_genomic.fna.dds.txt
-Dstart= 25638.0 and Dend=27328.0 
+Chain 796559.0 798249.0 1307.0 1.0 25638.0 27328.0 
 
 file: GCA_001702845.1_Fon037_genomic.fna.dds.txt
-Dstart= 28473.0 and Dend=29938.0 
+Chain 796566.0 798031.0 1092.0 1.0 28473.0 29938.0 
 
 file: GCA_001703175.1_Fol4287-Illumina_genomic.fna.dds.txt
-Dstart= 24647.0 and Dend=25652.0 
+Chain 796761.0 797766.0 762.0 1.0 24647.0 25652.0 
 
 file: GCA_001703265.1_Fom009_genomic.fna.dds.txt
-Dstart= 82979.0 and Dend=84626.0 
+Chain 796568.0 798215.0 1161.0 1.0 82979.0 84626.0 
 
 file: GCA_001696625.1_C1HIR_9889_genomic.fna.dds.txt
-Dstart= 2898.0 and Dend=4697.0 
+Chain 796568.0 798367.0 2355.0 1.0 2898.0 4697.0 
 
 file: GCA_001703295.1_Fom011_genomic.fna.dds.txt
-Dstart= 327.0 and Dend=1376.0 
+Chain 796567.0 797616.0 1285.0 1.0 327.0 1376.0 
 
 file: GCA_000149955.2_ASM14995v2_genomic.fna.dds.txt
-Dstart= 3493.0 and Dend=4654.0 
+Chain 796596.0 797757.0 694.0 1.0 3493.0 4654.0 
 
 file: GCA_001703455.1_Foc011_genomic.fna.dds.txt
-Dstart= 28421.0 and Dend=30107.0 
+Chain 796567.0 798253.0 1624.0 1.0 28421.0 30107.0 
 
 file: GCA_001703305.1_Fom010_genomic.fna.dds.txt
-Dstart= 465368.0 and Dend=467054.0 
+Chain 796567.0 798253.0 1899.0 1.0 465368.0 467054.0 
 
 file: GCA_900067095.1_F._proliferatum_ET1_version_1_genomic.fna.dds.txt
-Dstart= 6408.0 and Dend=8003.0 
+Chain 796639.0 798234.0 1197.0 1.0 6408.0 8003.0 
 
 file: GCA_001702715.1_Fon019_genomic.fna.dds.txt
-Dstart= 47787.0 and Dend=49474.0 
+Chain 796566.0 798253.0 1841.0 1.0 47787.0 49474.0 
 
 file: GCA_000966635.1_Fus_gra_233423_v1_genomic.fna.dds.txt
-Dstart= 20682.0 and Dend=21873.0 
+Chain 796566.0 797757.0 784.0 1.0 20682.0 21873.0 
 
 file: GCA_001702745.1_Fon002_genomic.fna.dds.txt
-Dstart= 3.0 and Dend=1418.0 
+Chain 796948.0 798363.0 1727.0 1.0 3.0 1418.0 
 
 file: GCA_001705295.1_ASM170529v1_genomic.fna.dds.txt
-Dstart= 4333.0 and Dend=6100.0 
+Chain 796568.0 798335.0 2456.0 1.0 4333.0 6100.0 
 
 file: GCA_001702795.1_Fon015_genomic.fna.dds.txt
-Dstart= 99910.0 and Dend=101293.0 
+Chain 796567.0 797950.0 1668.0 1.0 99910.0 101293.0 
 
 file: GCA_001703125.1_FoMN14_genomic.fna.dds.txt
-Dstart= 1219.0 and Dend=2797.0 
+Chain 796569.0 798147.0 1128.0 1.0 1219.0 2797.0 
+
