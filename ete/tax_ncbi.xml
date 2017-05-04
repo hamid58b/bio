@@ -1,0 +1,192 @@
+<?xml version="1.0"?>
+<!DOCTYPE TaxaSet PUBLIC "-//NLM//DTD Taxon, 14th January 2002//EN" "https://www.ncbi.nlm.nih.gov/entrez/query/DTD/taxon.dtd">
+<TaxaSet>
+<Taxon>
+    <TaxId>1982362</TaxId>
+    <ScientificName>Cyanomargarita calcarea</ScientificName>
+    <OtherNames>
+        <Synonym>'Cyanomargarita calcarea'</Synonym>
+    </OtherNames>
+    <ParentTaxId>1982356</ParentTaxId>
+    <Rank>species</Rank>
+    <Division>Bacteria</Division>
+    <GeneticCode>
+        <GCId>11</GCId>
+        <GCName>Bacterial, Archaeal and Plant Plastid</GCName>
+    </GeneticCode>
+    <MitoGeneticCode>
+        <MGCId>0</MGCId>
+        <MGCName>Unspecified</MGCName>
+    </MitoGeneticCode>
+    <Lineage>cellular organisms; Bacteria; Terrabacteria group; Cyanobacteria/Melainabacteria group; Cyanobacteria; Nostocales; Cyanomargaritaceae; Cyanomargarita</Lineage>
+    <LineageEx>
+        <Taxon>
+            <TaxId>131567</TaxId>
+            <ScientificName>cellular organisms</ScientificName>
+            <Rank>no rank</Rank>
+        </Taxon>
+        <Taxon>
+            <TaxId>2</TaxId>
+            <ScientificName>Bacteria</ScientificName>
+            <Rank>superkingdom</Rank>
+        </Taxon>
+        <Taxon>
+            <TaxId>1783272</TaxId>
+            <ScientificName>Terrabacteria group</ScientificName>
+            <Rank>no rank</Rank>
+        </Taxon>
+        <Taxon>
+            <TaxId>1798711</TaxId>
+            <ScientificName>Cyanobacteria/Melainabacteria group</ScientificName>
+            <Rank>no rank</Rank>
+        </Taxon>
+        <Taxon>
+            <TaxId>1117</TaxId>
+            <ScientificName>Cyanobacteria</ScientificName>
+            <Rank>phylum</Rank>
+        </Taxon>
+        <Taxon>
+            <TaxId>1161</TaxId>
+            <ScientificName>Nostocales</ScientificName>
+            <Rank>order</Rank>
+        </Taxon>
+        <Taxon>
+            <TaxId>1982354</TaxId>
+            <ScientificName>Cyanomargaritaceae</ScientificName>
+            <Rank>family</Rank>
+        </Taxon>
+        <Taxon>
+            <TaxId>1982356</TaxId>
+            <ScientificName>Cyanomargarita</ScientificName>
+            <Rank>genus</Rank>
+        </Taxon>
+    </LineageEx>
+    <CreateDate>2017/04/25 15:56:07</CreateDate>
+    <UpdateDate>2017/04/25 19:18:13</UpdateDate>
+    <PubDate>2017/04/25 19:00:22</PubDate>
+</Taxon>
+<Taxon>
+    <TaxId>1982361</TaxId>
+    <ScientificName>Cyanomargarita melechinii</ScientificName>
+    <OtherNames>
+        <Synonym>'Cyanomargarita melechinii'</Synonym>
+    </OtherNames>
+    <ParentTaxId>1982356</ParentTaxId>
+    <Rank>species</Rank>
+    <Division>Bacteria</Division>
+    <GeneticCode>
+        <GCId>11</GCId>
+        <GCName>Bacterial, Archaeal and Plant Plastid</GCName>
+    </GeneticCode>
+    <MitoGeneticCode>
+        <MGCId>0</MGCId>
+        <MGCName>Unspecified</MGCName>
+    </MitoGeneticCode>
+    <Lineage>cellular organisms; Bacteria; Terrabacteria group; Cyanobacteria/Melainabacteria group; Cyanobacteria; Nostocales; Cyanomargaritaceae; Cyanomargarita</Lineage>
+    <LineageEx>
+        <Taxon>
+            <TaxId>131567</TaxId>
+            <ScientificName>cellular organisms</ScientificName>
+            <Rank>no rank</Rank>
+        </Taxon>
+        <Taxon>
+            <TaxId>2</TaxId>
+            <ScientificName>Bacteria</ScientificName>
+            <Rank>superkingdom</Rank>
+        </Taxon>
+        <Taxon>
+            <TaxId>1783272</TaxId>
+            <ScientificName>Terrabacteria group</ScientificName>
+            <Rank>no rank</Rank>
+        </Taxon>
+        <Taxon>
+            <TaxId>1798711</TaxId>
+            <ScientificName>Cyanobacteria/Melainabacteria group</ScientificName>
+            <Rank>no rank</Rank>
+        </Taxon>
+        <Taxon>
+            <TaxId>1117</TaxId>
+            <ScientificName>Cyanobacteria</ScientificName>
+            <Rank>phylum</Rank>
+        </Taxon>
+        <Taxon>
+            <TaxId>1161</TaxId>
+            <ScientificName>Nostocales</ScientificName>
+            <Rank>order</Rank>
+        </Taxon>
+        <Taxon>
+            <TaxId>1982354</TaxId>
+            <ScientificName>Cyanomargaritaceae</ScientificName>
+            <Rank>family</Rank>
+        </Taxon>
+        <Taxon>
+            <TaxId>1982356</TaxId>
+            <ScientificName>Cyanomargarita</ScientificName>
+            <Rank>genus</Rank>
+        </Taxon>
+    </LineageEx>
+    <CreateDate>2017/04/25 15:56:07</CreateDate>
+    <UpdateDate>2017/04/25 19:18:13</UpdateDate>
+    <PubDate>2017/04/25 19:00:22</PubDate>
+</Taxon>
+<Taxon>
+    <TaxId>1982356</TaxId>
+    <ScientificName>Cyanomargarita</ScientificName>
+    <OtherNames>
+        <Synonym>'Cyanomargarita'</Synonym>
+    </OtherNames>
+    <ParentTaxId>1982354</ParentTaxId>
+    <Rank>genus</Rank>
+    <Division>Bacteria</Division>
+    <GeneticCode>
+        <GCId>11</GCId>
+        <GCName>Bacterial, Archaeal and Plant Plastid</GCName>
+    </GeneticCode>
+    <MitoGeneticCode>
+        <MGCId>0</MGCId>
+        <MGCName>Unspecified</MGCName>
+    </MitoGeneticCode>
+    <Lineage>cellular organisms; Bacteria; Terrabacteria group; Cyanobacteria/Melainabacteria group; Cyanobacteria; Nostocales; Cyanomargaritaceae</Lineage>
+    <LineageEx>
+        <Taxon>
+            <TaxId>131567</TaxId>
+            <ScientificName>cellular organisms</ScientificName>
+            <Rank>no rank</Rank>
+        </Taxon>
+        <Taxon>
+            <TaxId>2</TaxId>
+            <ScientificName>Bacteria</ScientificName>
+            <Rank>superkingdom</Rank>
+        </Taxon>
+        <Taxon>
+            <TaxId>1783272</TaxId>
+            <ScientificName>Terrabacteria group</ScientificName>
+            <Rank>no rank</Rank>
+        </Taxon>
+        <Taxon>
+            <TaxId>1798711</TaxId>
+            <ScientificName>Cyanobacteria/Melainabacteria group</ScientificName>
+            <Rank>no rank</Rank>
+        </Taxon>
+        <Taxon>
+            <TaxId>1117</TaxId>
+            <ScientificName>Cyanobacteria</ScientificName>
+            <Rank>phylum</Rank>
+        </Taxon>
+        <Taxon>
+            <TaxId>1161</TaxId>
+            <ScientificName>Nostocales</ScientificName>
+            <Rank>order</Rank>
+        </Taxon>
+        <Taxon>
+            <TaxId>1982354</TaxId>
+            <ScientificName>Cyanomargaritaceae</ScientificName>
+            <Rank>family</Rank>
+        </Taxon>
+    </LineageEx>
+    <CreateDate>2017/04/25 15:53:22</CreateDate>
+    <UpdateDate>2017/04/25 19:18:13</UpdateDate>
+    <PubDate>2017/04/25 19:00:22</PubDate>
+</Taxon>
+
+</TaxaSet>
