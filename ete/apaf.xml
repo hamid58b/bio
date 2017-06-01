@@ -139,6 +139,8 @@
                                     <domain from="1200" to="1238" confidence="1.2E-7">WD40</domain>
                                  </domain_architecture>
                               </sequence>
+                              
+
                            </clade>
                         </clade>
                         <clade>
@@ -660,6 +662,21 @@
                         <domain from="154" to="465" confidence="2.0E-6">NB-ARC</domain>
                      </domain_architecture>
                   </sequence>
+                  
+                  <property ref="ird:H1Clade" datatype="xsd:string" applies_to="node">npdm</property>
+                  <property ref="ird:HA" datatype="xsd:string" applies_to="node">1</property>
+                  <property ref="ird:Year" datatype="xsd:string" applies_to="node">2009</property>
+                  <property ref="ird:Country" datatype="xsd:string" applies_to="node">Denmark</property>
+                  <property ref="ird:GlobalH1Clade" datatype="xsd:string" applies_to="node">1A.3.3.2</property>
+                  <property ref="ird:Subtype" datatype="xsd:string" applies_to="node">H1N1</property>
+                  <property ref="ird:FluSeason" datatype="xsd:string" applies_to="node">09-10</property>
+                  <property ref="ird:Region" datatype="xsd:string" applies_to="node">Europe</property>
+                  <property ref="ird:Host" datatype="xsd:string" applies_to="node">Human</property>
+                  <property ref="ird:NA" datatype="xsd:string" applies_to="node">1</property>
+                  
+                  
+                  
+                  
                </clade>
             </clade>
          </clade>
