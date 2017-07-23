@@ -1,21 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <phyloxml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.phyloxml.org http://www.phyloxml.org/1.20/phyloxml.xsd" xmlns="http://www.phyloxml.org">
 <phylogeny rooted="false" rerootable="true">
   <clade>
     <clade>
-        <tag2>
-            <att2>24</att2>
-        </tag2>
-        <property applies_to="clade" datatype="xksd:string" ref="Resistance score">0xA3B523
-        </property>
-        <property2 applies_to="clade" datatype="xksd:string" ref="Resistance score2">0xA3B523
-        </property2>
       <branch_length>1.0</branch_length>
       <taxonomy>
         <scientific_name>5579</scientific_name>
-        
       </taxonomy>
-      
-            <clade>
+      <clade>
         <branch_length>1.0</branch_length>
         <taxonomy>
           <scientific_name>1043004</scientific_name>
@@ -31,20 +23,4 @@
   </clade>
 </phylogeny>
 
-<labels>
-    
-    <label type="text">
-        <name show="0">Att2</name>
-        <data tag="tag2" ref="att2"></data>
-    </label>
-    <label type="color">
-        <name show="1">Resistance</name>
-        <data tag="property" ref="Resistance score"></data>
-    </label>
-    <label type="color">
-        <name show="2">Resistance2</name>
-        <data tag="property2" ref="Resistance score2"></data>
-    </label>
-
-</labels>
 </phyloxml>
