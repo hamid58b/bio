@@ -25,8 +25,8 @@ def dl_from_ncbi(assembly_summary):
             
             print(gfffileName)
             if not os.path.isfile(fnafileName):
-                os.system('curl -o ' + fnafileName + ' '  + fna_url)
-                os.system('curl -o ' + gfffileName + ' '  + gff_url)
+                #os.system('curl -o ' + fnafileName + ' '  + fna_url)
+                #os.system('curl -o ' + gfffileName + ' '  + gff_url)
                 os.system('curl ' + assembly_url + '>>' + assembly_stat )
                 print (" ################### "+ gfffileName)
 
