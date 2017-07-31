@@ -15,13 +15,13 @@ def get_json(node):
     node.name = node.name.replace("'", '')
         
     json = { "name": node.name, 
-             "display_label": node.name,
-             "duplication": dup,
-             "branch_length": str(node.dist),
-             "common_name": node.name,
-             "seq_length": 0,
+#             "display_label": node.name,
+#             "duplication": dup,
+#             "branch_length": str(node.dist),
+#             "common_name": node.name,
+#             "seq_length": 0,
              "type": "node" if node.children else "leaf",
-             "uniprot_name": "Unknown",
+#             "uniprot_name": "Unknown",
              }
     if node.children:
         json["children"] = []
@@ -31,20 +31,22 @@ def get_json(node):
 
 
 if __name__ == '__main__':
-#    if len(sys.argv) > 1:
-#        t = Tree(sys.argv[1])
-#        print (t)
-#
-#    else:
-#        # create a random example tree
-#        t = Tree()
-#
-#        t.populate(100, random_branches=True)
-#     
-    t=Tree()
-    t.populate(10, random_branches=True)
-    print(t)
+    if len(sys.argv) > 1:
+        t = Tree(sys.argv[1])
+        print (t)
+
+    else:
+        # create a random example tree
+        t = Tree()
+
+        t.populate(100, random_branches=True)
+     
+#    t=Tree()
+#    t.populate(10000, random_branches=True)
+#    print(t)
 
     # TreeWidget seems to fail with simple quotes
     json=str(get_json(t)).replace("'", '"')
-    print (json)
+    #print (json)
+    with open ('convertedJson.json', 'w') as f:
+        f.write(json)
