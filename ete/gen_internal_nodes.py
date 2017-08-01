@@ -10,7 +10,7 @@ This script generates internal nodes by calling get_lineage
 
 import sys
 import random
-from ete3 import Tree,NCBITaxa, faces, TreeStyle, COLOR_SCHEMES, Phyloxml, phyloxml
+from ete3 import Tree,NCBITaxa, Phyloxml, phyloxml
 from IPython.display import Image, display
 import pandas as pd
 import numpy as np
@@ -95,16 +95,14 @@ def build_tree():
     node_list.update(internal_nodes)
     node_list.update(taxid_list)
 
-    node_list.remove('taxid')
 
 
-
-    t = ncbi.get_topology(node_list,intermediate_nodes=False)
+    t = ncbi.get_topology(node_list,intermediate_nodes=True)
     
-    ts = TreeStyle()
-    ts.layout_fn = layout
-    ts.mode = "r"
-    ts.show_leaf_name = True
+    #ts = TreeStyle()
+    # ts.layout_fn = layout
+    # ts.mode = "r"
+    # ts.show_leaf_name = True
 #    for leaf in t:
 #        info=df.loc[df['taxid'] == int(leaf.name)].values.tolist()
 #        row=info[0]
@@ -112,20 +110,20 @@ def build_tree():
 #        leaf.add_features(exon=row[3])
 #        leaf.add_features(gene=row[5])
 #        leaf.add_features(mRNA=row[7])
-    return t, ts
+    return t
 
 if __name__ == '__main__':
     
-    t, ts = build_tree()     
+    t = build_tree()
 
     #t.render("barchart.png", w=400, tree_style=ts)
     #display(Image(filename='barchart.png'))
     #t.show(tree_style=ts)
     #print(t)
-    t.show()
+    #t.show()
     
     # write tree as a newick format
-    t.write(format=1, outfile="NCBITree.nwk", features=["CDS","mRNA","gene"])
+    t.write(format=1, outfile="NCBITree2.nwk")
     
     project = Phyloxml()
     # TODO which format? 
