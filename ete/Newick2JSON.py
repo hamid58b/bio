@@ -13,7 +13,7 @@ import numpy as np
 
 
 ncbi = NCBITaxa()
-df=pd.read_csv("stats(OLD).csv", names=['taxid','CDS','CDS_length','exon','exon_length','gene','gene_length','mRNA','mRNA_length'])
+df=pd.read_csv("boacsv.txt", names=['taxid','CDS','CDS_length','exon','exon_length','gene','gene_length','mRNA','mRNA_length'])
 taxid_list=df['taxid']
 
   # call get_leaves_taxid
@@ -47,9 +47,10 @@ def get_json(node):
 
     node.name = node.name.replace("'", '')
 
-    nodes=[node.name]
-    if node.name != "" and node.children:
+    node_Name=""
+    if node.name != "" :
         node_Name= ncbi.translate_to_names([int(node.name)])
+        node_Name=str(node_Name[0])
         print("node name ------" + str(node_Name))
 
     nodeset=set()
@@ -60,25 +61,30 @@ def get_json(node):
         taxid=int(node.name)
         nodeset.add(taxid)
         leaves_list=get_leaves_taxid(nodeset)
-        print(leaves_list)
-        print(df.loc[df['taxid'].isin(leaves_list)])
-        leaves_frame=df.loc[df['taxid'].isin(leaves_list)]
-        for index,row in leaves_frame.iterrows():
-            print (row['taxid'], row['gene'])
+        # leaves_frame=df.loc[df['taxid'].isin(leaves_list)]
 
-    json = { "name": node.name, 
+    json = {"name": node_Name.replace('\n','').replace("'",""),
+            "taxid": node.name,
+            # "sci-name":node_Name,  #TODO FIXME
 #             "display_label": node.name,
 #             "duplication": dup,
 #             "branch_length": str(node.dist),
 #             "common_name": node.name,
 #             "seq_length": 0,
-             "leave":[ {"taxid":str(int(row['taxid'])),
-                        "gene":str(row['gene']),
-                        "gene_length":str(row['gene_length'])
-                        } for index, row in leaves_frame.iterrows()], #  this format "leaves": ["L1", "L2", "L3"]
+#              "leave":[ {"taxid":str(int(row['taxid'])),
+#                         "gene":str(row['gene']),
+#                         "gene_length":str(row['gene_length']),
+#                         "exon": str(row['exon']),
+#                         "exon_length": str(row['exon_length']),
+#                         "mRNA": str(row['mRNA']),
+#                         "mRNA_length": str(row['mRNA_length']),
+#                         "CDS": str(row['CDS']),
+#                         "CDS_length": str(row['CDS_length'])
+#                         } for index, row in leaves_frame.iterrows()],  #  this format "leaves": ["L1", "L2", "L3"]
+             "leaves": [str(leaf) for leaf in leaves_list],  # this format "leaves": ["L1", "L2", "L3"]
              "type": "node" if node.children else "leaf",
-#             "uniprot_name": "Unknown",
-             }
+            #             "uniprot_name": "Unknown",
+            }
     print (json)
     if node.children:
         json["children"] = []
