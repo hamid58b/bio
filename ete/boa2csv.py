@@ -11,7 +11,7 @@ CDSMean={}
 assemblers={}
 taxlist=set()
 
-with open("boa_output.txt") as f:
+with open("boa_output(bacteria).txt") as f:
     for line in f:
         #print (line)
         taxid= line[line.index('[')+1:line.index(']')]
