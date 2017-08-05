@@ -11,7 +11,7 @@ CDSMean={}
 assemblers={}
 taxlist=set()
 
-with open("boa_output(bacteria).txt") as f:
+with open("boa_output_bacteria.txt") as f, open("assemblerdata.csv", "w") as assemblerfile:
     for line in f:
         #print (line)
         taxid= line[line.index('[')+1:line.index(']')]
@@ -34,13 +34,15 @@ with open("boa_output(bacteria).txt") as f:
             mRNAMean[taxid]=value    
         elif line.startswith('CDSMean'):
             CDSMean[taxid]=value        
-        elif line.startswith('Assembler'):
-            assemblers[taxid]=value
+        elif line.startswith('Assembler'): # FIXME for one genome we may have different assembler, it is not unique.
+            # assemblers[taxid]=value
+            value = line[line.index('][') + 2:line.index('] =')]
+            assemblerfile.write(str(taxid)+ ","+str(value)+"\n")
           
         
 print(len(taxlist),len(assemblers),len(geneCounts),len(geneMean), len(exonCounts),len(exonMean),len(mRNACounts),len(mRNAMean),len(CDSCounts),len(CDSMean))
 
-with open("boacsv.txt",'w') as out:
+with open("boacsv_bacteria.csv",'w') as out:
     for taxid in taxlist:
         if taxid not in geneCounts:
             geneCounts[taxid]=0
@@ -57,5 +59,7 @@ with open("boacsv.txt",'w') as out:
 
 
         out.write(str(taxid) + ","+ str(geneCounts[taxid])+ ","+ str(geneMean[taxid])+ ","+ str(exonCounts[taxid])+ ","+ str(exonMean[taxid])+ ","+ str(mRNACounts[taxid])+ ","+ str(mRNAMean[taxid])+ ","+ str(CDSCounts[taxid])+ ","+ str(CDSMean[taxid])+"\n")
+        #assemblerfile.write(str(taxid) + ","+ str(geneCounts[taxid])+ ","+ str(geneMean[taxid])+ ","+ str(exonCounts[taxid])+ ","+ str(exonMean[taxid])+ ","+ str(mRNACounts[taxid])+ ","+ str(mRNAMean[taxid])+ ","+ str(CDSCounts[taxid])+ ","+ str(CDSMean[taxid])+"\n")
+
 
         

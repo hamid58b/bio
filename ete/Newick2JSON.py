@@ -3,6 +3,8 @@
 '''
  Convert nwk format to json
  the tree has annotated with list of leaves 
+ First argument is the Newikc file format
+ Second Argument will be the generated JSON file (Equivalent to the Newick format)
 '''
 
 import sys
@@ -11,10 +13,15 @@ import random
 import pandas as pd
 import numpy as np
 
+lineage={}
 
 ncbi = NCBITaxa()
-df=pd.read_csv("boacsv.txt", names=['taxid','CDS','CDS_length','exon','exon_length','gene','gene_length','mRNA','mRNA_length'])
+df=pd.read_csv("boacsv_bacteria.csv", names=['taxid','CDS','CDS_length','exon','exon_length','gene','gene_length','mRNA','mRNA_length'])
 taxid_list=df['taxid']
+df_assemblers=pd.read_csv("assemblerdata.csv", names=['taxid','assembler'])
+
+for taxid in taxid_list:
+    lineage[taxid]=ncbi.get_lineage(taxid)
 
   # call get_leaves_taxid
   #  nodeset=set()
@@ -28,7 +35,7 @@ def get_leaves_taxid(nodeset):
     for nodeid in nodeset:
         for taxid in taxid_list:
             try:
-                if nodeid in ncbi.get_lineage(taxid):
+                if nodeid in lineage[taxid]:
                     gff_set.add(taxid)
             except ValueError:
                 print ("error in getting get_lineage()")
@@ -55,23 +62,23 @@ def get_json(node):
 
     nodeset=set()
     leaves_list=[]
-    leaves_frame=pd.DataFrame();
+    assembler_frame=pd.DataFrame()
+    leaves_frame=pd.DataFrame()
     if node.name!="" and node.children:
-        print("node name:" + node.name)
         taxid=int(node.name)
         nodeset.add(taxid)
         leaves_list=get_leaves_taxid(nodeset)
-        # leaves_frame=df.loc[df['taxid'].isin(leaves_list)]
+        leaves_frame=df.loc[df['taxid'].isin(leaves_list)]
+        assembler_frame=df_assemblers.loc[df_assemblers['taxid'].isin(leaves_list)]
 
     json = {"name": node_Name.replace('\n','').replace("'",""),
             "taxid": node.name,
-            # "sci-name":node_Name,  #TODO FIXME
-#             "display_label": node.name,
+            # "display_label": node.name,
 #             "duplication": dup,
 #             "branch_length": str(node.dist),
 #             "common_name": node.name,
 #             "seq_length": 0,
-#              "leave":[ {"taxid":str(int(row['taxid'])),
+#              "leaves":[ {"taxid":str(int(row['taxid'])),
 #                         "gene":str(row['gene']),
 #                         "gene_length":str(row['gene_length']),
 #                         "exon": str(row['exon']),
@@ -81,11 +88,23 @@ def get_json(node):
 #                         "CDS": str(row['CDS']),
 #                         "CDS_length": str(row['CDS_length'])
 #                         } for index, row in leaves_frame.iterrows()],  #  this format "leaves": ["L1", "L2", "L3"]
-             "leaves": [str(leaf) for leaf in leaves_list],  # this format "leaves": ["L1", "L2", "L3"]
-             "type": "node" if node.children else "leaf",
+            "leaves": [[str(int(row['taxid'])),
+                        str(row['gene']),
+                        str(row['gene_length']),
+                        str(row['exon']),
+                        str(row['exon_length']),
+                        str(row['mRNA']),
+                        str(row['mRNA_length']),
+                        str(row['CDS']),
+                        str(row['CDS_length'])
+                        ] for index, row in leaves_frame.iterrows()],  # this format "leaves": ["L1", "L2", "L3"]
+            "assemblers":[str(row['assembler']) for index, row in assembler_frame.iterrows()],
+            #              "leaves": [str(leaf) for leaf in leaves_list],  # this format "leaves": ["L1", "L2", "L3"]
+            #              "type": "node" if node.children else "leaf",
+            #             "leaves": [str(row) for index,row in leaves_frame.iterrows()],  # this format "leaves": ["L1", "L2", "L3"]
+            #             "type": "node" if node.children else "leaf",
             #             "uniprot_name": "Unknown",
             }
-    print (json)
     if node.children:
         json["children"] = []
         for ch in node.children:
@@ -94,9 +113,8 @@ def get_json(node):
 
 
 if __name__ == '__main__':
-    if len(sys.argv) > 1:
+    if len(sys.argv) > 2:
         t = Tree(sys.argv[1], format=1)
-        print (t)
 
     else:
         # create a random example tree
@@ -114,6 +132,6 @@ if __name__ == '__main__':
     json=json.replace("'", '"')
 
     #print (json)
-    with open ('convertedJson.json', 'w') as f:
+    with open (sys.argv[2], 'w') as f:
         f.write(json)
 
