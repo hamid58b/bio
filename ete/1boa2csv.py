@@ -1,5 +1,10 @@
 #!/usr/bin/python
 
+'''
+ This script gets Boa output and genrates the 2 csv files:
+ one for features stats and another csv file for assembly programs
+ ID is Refseq not taxid, bacause taxid is not unique
+'''
 geneCounts={}
 exonCounts={}
 mRNACounts={}
@@ -9,56 +14,59 @@ exonMean={}
 mRNAMean={}
 CDSMean={}
 assemblers={}
-taxlist=set()
+refseqlist=set()
+taxlist={}
 
 with open("boa_output_all.txt") as f, open("assemblerdata_8_17.csv", "w") as assemblerfile:
     for line in f:
         #print (line)
-        taxid= line[line.index('[')+1:line.index(']')]
-        taxlist.add(taxid)
+        refseq= line[line.index('[') + 1:line.index(']')]
+        taxid = line[line.index('][') + 1:line.index(']=')]
+        refseqlist.add(refseq)
+        taxlist[refseq]=taxid
         value= line[line.index('=')+1:].rstrip()
         
         if line.startswith('geneCounts'):
-            geneCounts[taxid]=value
+            geneCounts[refseq]=value
         elif line.startswith('exonCounts'):
-            exonCounts[taxid]=value
+            exonCounts[refseq]=value
         elif line.startswith('mRNACounts'):
-            mRNACounts[taxid]=value    
+            mRNACounts[refseq]=value
         elif line.startswith('CDSCounts'):
-            CDSCounts[taxid]=value    
+            CDSCounts[refseq]=value
         elif line.startswith('geneMean'):
-            geneMean[taxid]=value
+            geneMean[refseq]=value
         elif line.startswith('exonMean'):
-            exonMean[taxid]=value
+            exonMean[refseq]=value
         elif line.startswith('mRNAMean'):
-            mRNAMean[taxid]=value    
+            mRNAMean[refseq]=value
         elif line.startswith('CDSMean'):
-            CDSMean[taxid]=value        
+            CDSMean[refseq]=value
         elif line.startswith('Assembler'): # FIXME for one genome we may have different assembler, it is not unique.
             # assemblers[taxid]=value
             value = line[line.index('][') + 2:line.index('] =')]
-            assemblerfile.write(str(taxid)+ ","+str(value)+"\n")
+            assemblerfile.write(str(refseq) + "," + str(value) + "\n")
           
         
-print(len(taxlist),len(assemblers),len(geneCounts),len(geneMean), len(exonCounts),len(exonMean),len(mRNACounts),len(mRNAMean),len(CDSCounts),len(CDSMean))
+print(len(refseqlist), len(assemblers), len(geneCounts), len(geneMean), len(exonCounts), len(exonMean), len(mRNACounts), len(mRNAMean), len(CDSCounts), len(CDSMean))
 
 with open("boacsv_8_17.csv",'w') as out:
-    for taxid in taxlist:
-        if taxid not in geneCounts:
-            geneCounts[taxid]=0
-            geneMean[taxid]=0
-        if taxid not in exonCounts:
-            exonCounts[taxid]=0
-            exonMean[taxid]=0
-        if taxid not in mRNACounts:
-            mRNACounts[taxid]=0    
-            mRNAMean[taxid]=0    
-        if taxid not in CDSCounts:
-            CDSCounts[taxid]=0
-            CDSMean[taxid]=0
+    for refseq in refseqlist:
+        if refseq not in geneCounts:
+            geneCounts[refseq]=0
+            geneMean[refseq]=0
+        if refseq not in exonCounts:
+            exonCounts[refseq]=0
+            exonMean[refseq]=0
+        if refseq not in mRNACounts:
+            mRNACounts[refseq]=0
+            mRNAMean[refseq]=0
+        if refseq not in CDSCounts:
+            CDSCounts[refseq]=0
+            CDSMean[refseq]=0
 
 
-        out.write(str(taxid) + ","+ str(geneCounts[taxid])+ ","+ str(geneMean[taxid])+ ","+ str(exonCounts[taxid])+ ","+ str(exonMean[taxid])+ ","+ str(mRNACounts[taxid])+ ","+ str(mRNAMean[taxid])+ ","+ str(CDSCounts[taxid])+ ","+ str(CDSMean[taxid])+"\n")
+        out.write(str(refseq) + ","+ str(taxlist[refseq]) + "," + str(geneCounts[refseq]) + "," + str(geneMean[refseq]) + "," + str(exonCounts[refseq]) + "," + str(exonMean[refseq]) + "," + str(mRNACounts[refseq]) + "," + str(mRNAMean[refseq]) + "," + str(CDSCounts[refseq]) + "," + str(CDSMean[refseq]) + "\n")
         #assemblerfile.write(str(taxid) + ","+ str(geneCounts[taxid])+ ","+ str(geneMean[taxid])+ ","+ str(exonCounts[taxid])+ ","+ str(exonMean[taxid])+ ","+ str(mRNACounts[taxid])+ ","+ str(mRNAMean[taxid])+ ","+ str(CDSCounts[taxid])+ ","+ str(CDSMean[taxid])+"\n")
 
 
