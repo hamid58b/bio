@@ -17,9 +17,9 @@ import numpy as np
 lineage={}
 
 ncbi = NCBITaxa()
-df=pd.read_csv("boacsv_8_17.csv", names=['taxid','CDS','CDS_length','exon','exon_length','gene','gene_length','mRNA','mRNA_length'])
+df=pd.read_csv("boacsv_09_17.csv", names=['refseq','taxid','gene','gene_length','exon','exon_length','mRNA','mRNA_length','CDS','CDS_length'])
 taxid_list=df['taxid']
-df_assemblers=pd.read_csv("assemblerdata_8_17.csv", names=['taxid','assembler'])
+df_assemblers=pd.read_csv("assemblerdata_09_17.csv", names=['taxid','assembler'])
 
 for taxid in taxid_list:
     lineage[taxid]=ncbi.get_lineage(taxid)
@@ -90,6 +90,7 @@ def get_json(node):
 #                         "CDS_length": str(row['CDS_length'])
 #                         } for index, row in leaves_frame.iterrows()],  #  this format "leaves": ["L1", "L2", "L3"]
             "leaves": [[str(int(row['taxid'])),
+                        # str(row['refseq']),
                         str(row['gene']),
                         str(row['gene_length']),
                         str(row['exon']),

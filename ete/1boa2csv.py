@@ -17,40 +17,43 @@ assemblers={}
 refseqlist=set()
 taxlist={}
 
-with open("boa_output_all.txt") as f, open("assemblerdata_8_17.csv", "w") as assemblerfile:
+with open("boa_output1") as f, open("assemblerdata_09_17.csv", "w") as assemblerfile:
     for line in f:
-        #print (line)
-        refseq= line[line.index('[') + 1:line.index(']')]
-        taxid = line[line.index('][') + 1:line.index(']=')]
-        refseqlist.add(refseq)
-        taxlist[refseq]=taxid
-        value= line[line.index('=')+1:].rstrip()
-        
-        if line.startswith('geneCounts'):
-            geneCounts[refseq]=value
-        elif line.startswith('exonCounts'):
-            exonCounts[refseq]=value
-        elif line.startswith('mRNACounts'):
-            mRNACounts[refseq]=value
-        elif line.startswith('CDSCounts'):
-            CDSCounts[refseq]=value
-        elif line.startswith('geneMean'):
-            geneMean[refseq]=value
-        elif line.startswith('exonMean'):
-            exonMean[refseq]=value
-        elif line.startswith('mRNAMean'):
-            mRNAMean[refseq]=value
-        elif line.startswith('CDSMean'):
-            CDSMean[refseq]=value
-        elif line.startswith('Assembler'): # FIXME for one genome we may have different assembler, it is not unique.
+
+
+        if line.startswith('Assembler'):  # FIXME for one genome we may have different assembler, it is not unique.
             # assemblers[taxid]=value
+            taxid = line[line.index('[') + 1:line.index(']')]
             value = line[line.index('][') + 2:line.index('] =')]
-            assemblerfile.write(str(refseq) + "," + str(value) + "\n")
-          
+            assemblerfile.write(str(taxid) + "," + str(value) + "\n")
+        else:
+            refseq = line[line.index('[') + 1:line.index(']')]
+            taxid = line[line.index('][') + 2:line.index('] =')]
+            refseqlist.add(refseq)
+            taxlist[refseq] = taxid
+            value = line[line.index('=') + 1:].rstrip()
+
+            if line.startswith('geneCounts'):
+                geneCounts[refseq]=value
+            elif line.startswith('exonCounts'):
+                exonCounts[refseq]=value
+            elif line.startswith('mRNACounts'):
+                mRNACounts[refseq]=value
+            elif line.startswith('CDSCounts'):
+                CDSCounts[refseq]=value
+            elif line.startswith('geneMean'):
+                geneMean[refseq]=value
+            elif line.startswith('exonMean'):
+                exonMean[refseq]=value
+            elif line.startswith('mRNAMean'):
+                mRNAMean[refseq]=value
+            elif line.startswith('CDSMean'):
+                CDSMean[refseq]=value
+
         
 print(len(refseqlist), len(assemblers), len(geneCounts), len(geneMean), len(exonCounts), len(exonMean), len(mRNACounts), len(mRNAMean), len(CDSCounts), len(CDSMean))
 
-with open("boacsv_8_17.csv",'w') as out:
+with open("boacsv_09_17.csv",'w') as out:
     for refseq in refseqlist:
         if refseq not in geneCounts:
             geneCounts[refseq]=0
