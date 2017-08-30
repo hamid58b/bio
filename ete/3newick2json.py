@@ -89,16 +89,16 @@ def get_json(node):
 #                         "CDS": str(row['CDS']),
 #                         "CDS_length": str(row['CDS_length'])
 #                         } for index, row in leaves_frame.iterrows()],  #  this format "leaves": ["L1", "L2", "L3"]
-            "leaves": [[str(int(row['taxid'])),
+            "leaves": [[#str(int(row['taxid'])),
                         # str(row['refseq']),
-                        str(row['gene']),
-                        str(row['gene_length']),
-                        str(row['exon']),
-                        str(row['exon_length']),
-                        str(row['mRNA']),
-                        str(row['mRNA_length']),
-                        str(row['CDS']),
-                        str(row['CDS_length'])
+                        str(row['gene'])+","+
+                        str(int(float(row['gene_length'])))+","+
+                        str(row['exon'])+","+
+                        str(int(float(row['exon_length'])))+","+
+                        str(row['mRNA'])+","+
+                        str(int(float(row['mRNA_length'])))+","+
+                        str(row['CDS'])+","+
+                        str(int(float(row['CDS_length'])))
                         ] for index, row in leaves_frame.iterrows()],  # this format "leaves": ["L1", "L2", "L3"]
             "assemblers":[str(row['assembler']) for index, row in assembler_frame.iterrows()],
             #              "leaves": [str(leaf) for leaf in leaves_list],  # this format "leaves": ["L1", "L2", "L3"]
