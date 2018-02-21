@@ -1,0 +1,15 @@
+total_length,,total_gap_length,,scaffold_count,,scaffold_N50,,contig_count,,contig_N50,
+,,,,,,,,,,,
+Mean,"1,640,572,221.25",Mean,"134,075,973.25",Mean,"2,545.00",Mean,"313,063.00",Mean,"141,711.50",Mean,"55,717.50"
+Standard Error,"479,301,360.10",Standard Error,"71,971,792.47",Standard Error,"2,545.00",Standard Error,"313,063.00",Standard Error,"78,078.86",Standard Error,"13,593.71"
+Median,"1,367,778,285.50",Median,"72,522,166.00",Median,0.00,Median,0.00,Median,"86,905.50",Median,"65,551.00"
+Mode,#N/A,Mode,#N/A,Mode,0.00,Mode,0.00,Mode,#N/A,Mode,#N/A
+Standard Deviation,"958,602,720.20",Standard Deviation,"143,943,584.95",Standard Deviation,"5,090.00",Standard Deviation,"626,126.00",Standard Deviation,"156,157.71",Standard Deviation,"27,187.43"
+Sample Variance,"918,919,175,184,077,000.00",Sample Variance,"20,719,755,647,291,200.00",Sample Variance,"25,908,100.00",Sample Variance,"392,033,767,876.00",Sample Variance,"24,385,231,923.00",Sample Variance,"739,156,233.00"
+Kurtosis,0.76,Kurtosis,3.61,Kurtosis,4.00,Kurtosis,4.00,Kurtosis,2.60,Kurtosis,2.12
+Skewness,1.23,Skewness,1.89,Skewness,2.00,Skewness,2.00,Skewness,1.63,Skewness,-1.55
+Range,"2,107,048,092.00",Range,"304,740,239.00",Range,"10,180.00",Range,"1,252,252.00",Range,"343,085.00",Range,"58,392.00"
+Minimum,"859,842,111.00",Minimum,"43,259,661.00",Minimum,0.00,Minimum,0.00,Minimum,"24,975.00",Minimum,"16,688.00"
+Maximum,"2,966,890,203.00",Maximum,"347,999,900.00",Maximum,"10,180.00",Maximum,"1,252,252.00",Maximum,"368,060.00",Maximum,"75,080.00"
+Sum,"6,562,288,885.00",Sum,"536,303,893.00",Sum,"10,180.00",Sum,"1,252,252.00",Sum,"566,846.00",Sum,"222,870.00"
+Count,4.00,Count,4.00,Count,4.00,Count,4.00,Count,4.00,Count,4.00

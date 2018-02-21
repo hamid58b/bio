@@ -1,7 +1,7 @@
 #!/usr/bin/pthon
 
 '''
-    Author: Hamid Bagheri
+    @author: Hamid Bagheri
     
     This script generates Newick tree format 
     It creates internal nodes by calling get_lineage

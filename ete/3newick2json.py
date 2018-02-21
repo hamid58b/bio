@@ -1,11 +1,15 @@
 #!/usr/bin/python
 
 '''
+    @author: Hamid Bagheri
+
      Convert nwk format to json
      the tree has annotated with list of leaves 
      First argument is the Newick file format
      Second Argument will be the generated JSON file (Equivalent to the Newick format)
      It needs boacsv data and assembler data to annotate each node in the tree
+     
+     Example call: python 3newick2json.py tol_8_17.nwk tol_12_17.json 
 '''
 
 import sys
@@ -14,6 +18,7 @@ import random
 import pandas as pd
 import numpy as np
 import json
+import csv
 
 
 lineage={}
@@ -25,14 +30,18 @@ nodes_assembly_stats['nodes']=[]
 
 
 ncbi = NCBITaxa()
-df=pd.read_csv("boacsv_09_17.csv", names=['refseq','taxid','gene','gene_length','exon','exon_length','mRNA','mRNA_length','CDS','CDS_length'])
+df=pd.read_csv("boacsv_12_17.csv", names=['refseq','taxid','gene','gene_length','exon','exon_length','mRNA','mRNA_length','CDS','CDS_length','exon_per_gene'])
 taxid_list=df['taxid']
 df_assemblers=pd.read_csv("assemblerdata_09_17.csv", names=['taxid','assembler'])
 df_assemblystats=pd.read_csv("assemblystats2_09_17.csv", names=['refseq','taxid','total_length','total_gap_length','scaffold_count', 'scaffold_N50','contig_count','contig_N50'])
 
+print(df)
 
 for taxid in taxid_list:
-    lineage[taxid]=ncbi.get_lineage(taxid)
+    try:
+        lineage[taxid]=ncbi.get_lineage(taxid)
+    except Exception as e:
+        print(e)
 
   # call get_leaves_taxid
   #  nodeset=set()
@@ -63,6 +72,7 @@ def get_json(node):
     elif node.evoltype == "D":
         dup = "Y"
 
+
     node.name = node.name.replace("'", '')
 
     node_Name=""
@@ -81,16 +91,13 @@ def get_json(node):
         nodeset.add(taxid)
         leaves_list=get_leaves_taxid(nodeset)
         leaves_frame=df.loc[df['taxid'].isin(leaves_list)]
+        print(leaves_frame)
         assembler_frame=df_assemblers.loc[df_assemblers['taxid'].isin(leaves_list)]
         assemblystats_frame = df_assemblystats.loc[df_assemblystats['taxid'].isin(leaves_list)]
 
     json_tree = {"name": node_Name.replace('\n','').replace("'",""),
             "taxid": node.name,
-            # "display_label": node.name,
-#             "duplication": dup,
-#             "branch_length": str(node.dist),
-#             "common_name": node.name,
-#             "seq_length": 0,
+
 #              "leaves":[ {"taxid":str(int(row['taxid'])),
 #                         "gene":str(row['gene']),
 #                         "gene_length":str(row['gene_length']),
@@ -110,7 +117,8 @@ def get_json(node):
                         str(row['mRNA'])+","+
                         str(int(float(row['mRNA_length'])))+","+
                         str(row['CDS'])+","+
-                        str(int(float(row['CDS_length'])))
+                        str(int(float(row['CDS_length']))) + "," +
+                        str(float(row['exon_per_gene']))
                         ] for index, row in leaves_frame.iterrows()],  # this format "leaves": ["L1", "L2", "L3"]
             "assemblers":[str(row['assembler']) for index, row in assembler_frame.iterrows()],
             #              "leaves": [str(leaf) for leaf in leaves_list],  # this format "leaves": ["L1", "L2", "L3"]
@@ -132,7 +140,9 @@ def get_json(node):
             str(row['mRNA']) + "," +
             str(int(float(row['mRNA_length']))) + "," +
             str(row['CDS']) + "," +
-            str(int(float(row['CDS_length'])))
+            str(int(float(row['CDS_length'])))  + "," +
+            str(float(row['exon_per_gene']))
+
         ] for index, row in leaves_frame.iterrows()],
         "assemblers": [str(row['assembler']) for index, row in assembler_frame.iterrows()],
 
@@ -175,9 +185,9 @@ if __name__ == '__main__':
     json_tree=str(get_json(t))
     json_tree=json_tree.replace("'", '"')
 
-    with open('nodes_stats.txt','w') as outjson:
+    with open('nodes_stats1217.txt','w') as outjson:
         json.dump(nodes_stats,outjson)
-    with open('nodes_assembly_stats.txt', 'w') as outjsonassembly:
+    with open('nodes_assembly_stats1217.txt', 'w') as outjsonassembly:
             json.dump(nodes_assembly_stats, outjsonassembly)
 
     with open (sys.argv[2], 'w') as f:
