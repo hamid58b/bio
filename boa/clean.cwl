@@ -7,7 +7,7 @@ hints:
     clauses:
       c1: [ "0.94: corrected(Cleaned_Fastq) :- input(Short_Reads,Quality_Score)"]
       
-label: 'pPreprocessing'
+label: 'Preprocessing'
 
 inputs:
     Short_Reads:
