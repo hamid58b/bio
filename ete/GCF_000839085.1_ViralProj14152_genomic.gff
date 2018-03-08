@@ -1,0 +1,19 @@
+##gff-version 3
+#!gff-spec-version 1.21
+#!processor NCBI annotwriter
+#!genome-build ViralProj14152
+#!genome-build-accession NCBI_Assembly:GCF_000839085.1
+##sequence-region NC_003380.1 1 220
+##species https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=195056
+NC_003380.1	RefSeq	region	1	220	.	+	.	ID=id0;Dbxref=taxon:195056;Is_circular=true;gbkey=Src;genome=genomic;isolate=RYMV-I%3B RYMV-K;mol_type=genomic RNA;old-name=RYMV small circular viroid-like RNA
+NC_003380.1	RefSeq	gene	164	275	.	+	.	ID=gene0;Dbxref=GeneID:932239;Name=RYMV_satRNA_gp1;gbkey=Gene;gene_biotype=misc_RNA;locus_tag=RYMV_satRNA_gp1
+NC_003380.1	RefSeq	transcript	164	275	.	+	.	ID=rna0;Parent=gene0;Dbxref=GeneID:932239;Note=polarity (+) sense;gbkey=misc_RNA;product=hammerhead ribozyme
+NC_003380.1	RefSeq	exon	164	179	.	+	.	ID=id1;Parent=rna0;Dbxref=GeneID:932239;Note=polarity (+) sense;gbkey=misc_RNA;product=hammerhead ribozyme
+NC_003380.1	RefSeq	exon	43	55	.	+	.	ID=id2;Parent=rna0;Dbxref=GeneID:932239;Note=polarity (+) sense;gbkey=misc_RNA;product=hammerhead ribozyme
+NC_003380.1	RefSeq	mRNA	49	49	.	+	.	ID=rna1;Parent=gene1;Dbxref=GeneID:932238;gbkey=mRNA;product=mRNA formed by concatemerization of satelite RNA during replication
+NC_003380.1	RefSeq	exon	49	220	.	+	.	ID=id3;Parent=rna1;Dbxref=GeneID:932238;gbkey=mRNA;product=mRNA formed by concatemerization of satelite RNA during replication
+NC_003380.1	RefSeq	exon	1	49	.	+	.	ID=id4;Parent=rna1;Dbxref=GeneID:932238;gbkey=mRNA;product=mRNA formed by concatemerization of satelite RNA during replication
+NC_003380.1	RefSeq	CDS	49	220	.	+	0	ID=cds0;Parent=rna1;Dbxref=Genbank:YP_009272869.1,GeneID:932238;Name=YP_009272869.1;gbkey=CDS;product=hypothetical protein;protein_id=YP_009272869.1
+NC_003380.1	RefSeq	CDS	1	49	.	+	2	ID=cds0;Parent=rna1;Dbxref=Genbank:YP_009272869.1,GeneID:932238;Name=YP_009272869.1;gbkey=CDS;product=hypothetical protein;protein_id=YP_009272869.1
+NC_003380.1	RefSeq	region	176	176	.	+	.	ID=id5;Dbxref=GeneID:932239;Note=hammerhead ribozyme self-cleavage site%2C polarity (+) sense;gbkey=Site
+###
