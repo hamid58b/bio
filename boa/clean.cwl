@@ -5,7 +5,7 @@ baseCommand: echo
 
 hints:
     clauses:
-      c1: [ "0.94: corrected(Fastq) :- input(Fastq)"]
+      c1: [ "0.94: corrected(Cleaned_Fastq) :- input(Short_Reads,Quality_Score)"]
       
 label: 'pPreprocessing'
 
