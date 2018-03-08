@@ -1,58 +1,43 @@
 cwlVersion: v1.0
 class: Workflow
 doc: |
-   This workflow describes the comparative genomics
-   and genome assembly summary statistics 
+   This workflow describes the geonome assembly and annoation prcoess
    
 requirements:
   - class: DockerRequirement
     dockerPull: https://hub.docker.com/cwlviewer/
   
 inputs:
-  GFF_Files: File[]
-  Fasta_Files: File[]
-  Assembly_Stats_Files: File[]
-  Taxonomy_database: File
-  Gene_Ontology: File
+  Short_Reads: File
+  Quality_Score: File
   
 
 outputs:
-  Comparative_Genomics_Stats:
+  Gene_Features:
     type: File
-    outputSource: process/Comparative_Genomics_Stats
+    outputSource: gene_prediction/Gene_Features
   Assembly_Stats:
     type: File
-    outputSource: process/Assembly_Stats
+    outputSource: gene_prediction/Assembly_Stats
     
 steps:
   cleaning:
     run: clean.cwl
     in:
-      GFF_Files: GFF_Files
-      Fasta_Files: Fasta_Files
-      Assembly_Stats_Files: Assembly_Stats_Files
-    out: [GFFs,Fasta,Assembly_Stats]
+      Short_Reads: Short_Reads
+      Quality_Score: Quality_Score
+    out: [Cleaned_Fastq]
     
-  schema_gen:
-    run: schema.cwl
-    in:
-      Gene_Ontology: Gene_Ontology
-    out: [Schema]  
   
-  data_gen:
-    run: data_gen.cwl
+  genome_assembly:
+    run: assembly.cwl
     in:
-      Taxonomy_database: Taxonomy_database
-      GFFs: cleaning/GFFs
-      Fasta: cleaning/Fasta
-      Assembly_Stats: cleaning/Assembly_Stats
-      Schema : schema_gen/Schema
-    out: [Hadoop_Sequence_File]  
+      Assembly_Stats: cleaning/Cleaned_Fastq
+    out: [Assembled_Genome]  
   
-  process:
-    run: process.cwl
+  gene_prediction:
+    run: predict.cwl
     in:
-      sequence_file: data_gen/Hadoop_Sequence_File
-      Schema: schema_gen/Schema 
-    out: [Comparative_Genomics_Stats , Assembly_Stats]  
+      assembled_genome: genome_assembly/Assembled_Genome
+    out: [Gene_Features , Assembly_Stats]  
   
