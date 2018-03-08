@@ -5,8 +5,8 @@ baseCommand: echo
 
 hints:
     clauses:
-      c1: [ "0.99: assemble(Assembled_Genome) :- input(Cleaned_Genome)"]
-      c2: [ "0.99: output(Assembled_Genome) :- input(Cleaned_Genome)"]
+      c1: [ "0.5: Alignment(FASTA) :- input(Cleaned_Genome)"]
+      c2: [ "0.99: output(Assembled_Genome) :- input(FASTA)"]
 
       
       
