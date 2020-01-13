@@ -1,23 +1,18 @@
-
 cwlVersion: v1.0
 class: CommandLineTool
 baseCommand: echo
 
-label: 'Data Cleaning'
-
+label: 'Preprocessing'
+hints:
+    clauses:
+      c1: [ "0.94: corrected(Cleaned_Fastq) :- input(Short_Reads,Quality_Score)"]
+      
 inputs:
-    GFF_Files:
-        type: File[]
-    Fasta_Files: 
-        type: File[]
-    Assembly_Stats_Files: 
-        type: File[]
-
+    Short_Reads:
+        type: File
+    Quality_Score: 
+        type: File
   
 outputs:
-    GFFs:
-        type: File[]
-    Fasta: 
-        type: File[]
-    Assembly_Stats: 
-        type: File[]
+    Cleaned_Fastq: 
+        type: File
