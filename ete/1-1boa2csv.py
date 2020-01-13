@@ -18,9 +18,29 @@ assemblers={}
 refseqlist=set()
 taxlist={}
 
+'''
+ inputs are as follows:
+    AssemblerCounts[100053][Velvet] = 5
+    AssemblerCounts[1000561][N/A] = 1
+    AssemblerCounts[1000562][CAP3] = 1
+ and (exonpergene stats): 
+    GCF_000836235.1,8.93
+    GCF_000949405.1,8.61
+    GCF_000956235.1,7.97
+    GCF_000980195.1,8.69
+    GCF_001015335.1,6.3
+    
+ outputs are as follows:
+    1000562,CLC
+    1000562,Newbler
+    1000565,Newbler
+ And:
+    GCF_002143675.1,470, 4032, 888.6974206349206, 61, 160.63934426229508, 1, 360.0, 3971, 899.881390078066,1
+    GCF_900037445.1,1313, 2318, 809.8188093183779, 53, 168.75471698113208, 1, 348.0, 2265, 824.8194260485651,1
+    GCF_001997665.1,1334084, 4279, 954.0051413881748, 51, 179.5686274509804, 1, 368.0, 4228, 963.3467360454115,1
+'''
 with open("boa_output1") as f, open("assemblerdata2018.csv", "w") as assemblerfile:
     for line in f:
-
 
         if line.startswith('Assembler'):  # FIXME for one genome we may have different assembler, it is not unique.
             # assemblers[taxid]=value

@@ -96,8 +96,6 @@ def build_tree():
     node_list.update(internal_nodes)
     node_list.update(taxid_list)
 
-
-
     t = ncbi.get_topology(node_list,intermediate_nodes=True)
     
     #ts = TreeStyle()

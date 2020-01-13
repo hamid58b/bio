@@ -1,7 +1,7 @@
 #!/usr/bin/python
 
 '''
- This script gets Boa output and genrates the 2 csv files:
+ This script gets Boa output and generates the 2 csv files:
  one for features stats and another csv file for assembly programs
  ID is Refseq not taxid, bacause taxid is not unique
 '''
@@ -17,6 +17,18 @@ assemblers={}
 refseqlist=set()
 taxlist={}
 
+'''
+ input:
+    AssemblerCounts[GCF_000001215.4][7227][143726002][1152978][0][0][2442][21485538] = 1
+    AssemblerCounts[GCF_000001405.36][9606][3241953429][161368251][837][59364414][1497][56413054] = 1
+
+ 
+ 
+ output:
+    GCF_000001215.4,7227,143726002,1152978,0,0,2442,21485538
+    GCF_000001405.36,9606,3241953429,161368251,837,59364414,1497,56413054
+    
+'''
 with open("Assemblystats2.txt") as f, open("assemblystats2_09_17.csv", "w") as assemblerfile:
     for line in f:
         print(line)
