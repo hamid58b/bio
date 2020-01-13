@@ -20,6 +20,16 @@ def get_desired_ranks(taxid):
 # example one line from nr:
 # >WP_000332037.1 MULTISPECIES: ribonucleoside-diphosphate reductase 1 subunit beta [Proteobacteria]^ANP_311145.1 ribonucleoside-diphosphate reductase 1 beta subunit ferritin-like protein [Escherichia coli O
 
+def get_nr_taxlist(nr_file):
+    with open(nr_file, "r") as f:
+        nr_taxlist = f.readlines()
+        print("nr tax list size:")
+        print(len(nr_taxlist))
+
+
+get_nr_taxlist("nr_taxlist")
+
+
 distinct_taxa = set()
 print("nr")
 with open("nr_deflines_top10",'r') as nr:
