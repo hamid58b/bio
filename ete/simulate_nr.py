@@ -3,6 +3,15 @@ ncbi = NCBITaxa()
 # ncbi.update_taxonomy_database()
 
 
+def get_ranks(taxid, desired_rank):
+    lineage = ncbi.get_lineage(taxid)
+    lineage2ranks = ncbi.get_rank(lineage)
+
+    ranks2lineage = dict((rank, taxid) for (taxid, rank) in lineage2ranks.items())
+
+    return (ranks2lineage[desired_rank])
+
+
 def get_desired_ranks(taxid):
     lineage = ncbi.get_lineage(taxid)
     print("lineage to rank: ")
@@ -87,23 +96,23 @@ with open("nr_deflines_top10",'r') as nr:
 
 
 
-# tree = ncbi.get_topology([984896])
-# print (tree.get_ascii(attributes=["sci_name", "rank"]))
+tree = ncbi.get_topology([984896])
+print (tree.get_ascii(attributes=["sci_name", "rank"]))
 
-# print(get_desired_ranks(984896))
-#
-# print(get_desired_ranks(214092))
-#
-# print(get_desired_ranks(5741))
-#
-# print("--------")
-# print(ncbi.get_name_translator(['Campylobacter','Vibrio']))
+print(get_desired_ranks(984896))
 
-# lineage = ncbi.get_lineage(9606)
-# print (lineage)
-#
-#
-#
-# names = ncbi.get_taxid_translator(lineage)
-# print ([names[taxid] for taxid in lineage])
+print(get_desired_ranks(214092))
+
+print(get_desired_ranks(5741))
+
+print("--------")
+print(ncbi.get_name_translator(['Campylobacter','Vibrio']))
+
+lineage = ncbi.get_lineage(9606)
+print (lineage)
+
+
+
+names = ncbi.get_taxid_translator(lineage)
+print ([names[taxid] for taxid in lineage])
 

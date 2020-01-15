@@ -12,7 +12,7 @@ ncbi = NCBITaxa()
 # >WP_000332037.1 MULTISPECIES: ribonucleoside-diphosphate reductase 1 subunit beta [Proteobacteria]^ANP_311145.1 ribonucleoside-diphosphate reductase 1 beta subunit ferritin-like protein [Escherichia coli O
 
 distinct_taxa = set()
-print("nr")
+
 with open("nr_deflines_top10",'r') as nr:
     for line in nr:
         deflines = line.split("\x01")
@@ -60,6 +60,22 @@ with open("nr_taxlist", "w") as nr_taxlist:
         #
 
 
+def get_ranks(taxid, desired_rank):
+    lineage = ncbi.get_lineage(taxid)
+    lineage2ranks = ncbi.get_rank(lineage)
+
+    ranks2lineage = dict((rank, taxid) for (taxid, rank) in lineage2ranks.items())
+
+    return (ranks2lineage[desired_rank])
+
+def get_taxid(tax_name):
+    name2taxid = ncbi.get_name_translator([tax_name])
+    if len(name2taxid) > 0:
+        tax_id = name2taxid[tax_name][0]
+
+    return (tax_id)
+
+
 def get_nr_taxlist(nr_file):
     with open(nr_file, "r") as f:
         nr_taxlist = f.read().splitlines()
@@ -70,5 +86,26 @@ def get_nr_taxlist(nr_file):
     print(rand_items)
 
     #TODO: now write a function that gets phylum of each of these randomly selected.
+
+
+    # convert tax name to tax id
+    name2taxid = ncbi.get_name_translator([rand_items[0]])
+    tax_id = get_taxid(rand_items[0])
+
+    current_rank_id=''
+    # get desired rank for  taxid
+    current_rank_id = get_ranks(tax_id, 'phylum')
+    print("current_rank_id: ", current_rank_id)
+
+    # take another sample from nr taxa list and check if its phyla is different then misaanotate it
+    while True:
+        random_tax = random.sample(nr_taxlist,1)
+        if current_rank_id != get_ranks(get_taxid(random_tax[0]), 'phylum'):
+            print("find random misann")
+            print(" random rank: ",get_ranks(get_taxid(random_tax[0]), 'phylum'))
+            print(random_tax)
+            break
+
+
 
 get_nr_taxlist("nr_taxlist")
