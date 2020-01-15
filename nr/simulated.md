@@ -11,3 +11,9 @@
 ## Take NR sample
 * location on disk: ``` /Users/hbagheri/Downloads/mis-ann/simulated```
 * take RefSeq sample by command shuf: ```  ```
+
+## find misannotation
+
+* run the script ``` python verify_seq_parallel.py mislabeled_samples  ``` to check tree for LCA
+* find protein ids that have misannotations: ``` python get_misann_ids.py . ```
+* we need to remove those IDs that already are suspicious, make sure we havre a verified sample of RefSeq: ``` python sample_verified.py misannotated_keys sample_RefSeq  ```
