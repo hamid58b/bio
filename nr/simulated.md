@@ -11,9 +11,19 @@
 ## Take NR sample
 * location on disk: ``` /Users/hbagheri/Downloads/mis-ann/simulated```
 * take RefSeq sample by command shuf: ```  ```
+* few lines of sample RefSeq:
+
+```
+WP_005832776:100886=1;820=15;997889=1;997890=1
+WP_064481056:286=1;316=3
+WP_083014118:416916=1;732=1;739=2
+WP_005594834:45658=1;870967=1
+```
+
 
 ## find misannotation
 
 * run the script ``` python verify_seq_parallel.py mislabeled_samples  ``` to check tree for LCA
-* find protein ids that have misannotations: ``` python get_misann_ids.py . ```
+* find protein ids that have misannotations: ``` python get_misann_ids.py . ```. Basically it iterates over the folder and get the file name that are IDs of detected mislabeled.
 * we need to remove those IDs that already are suspicious, make sure we havre a verified sample of RefSeq: ``` python sample_verified.py misannotated_keys sample_RefSeq  ```
+* Now, we mislabel the sample_verified file by adding taxa from other phylum (make it dirty or add misannotation)
