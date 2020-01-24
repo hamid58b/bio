@@ -2,6 +2,19 @@
 
 ## Examples
 
+* convert Boa output to one line for each sequence
+
+```
+input:
+count[101M][101M][9755] = 1
+count[101M][1MTJ][9755] = 1
+count[101M][1MTK][9755] = 1
+count[101M][1MYM][9755] = 1
+
+output:
+101M:101M,9755=1;1MTJ,9755=1;1MTK,9755=1;1MYM,9755=1
+```
+
 * Sequence 1C08 belongs to cluster ``` 1C08:55275953```
 
 ```
@@ -35,3 +48,10 @@
   - 95-part-r-00000seq_cluster
   - part-r-00000_converted
   - part-r-00000_converted_1col_sorted_filtered_cut1
+
+* command to run conflicts
+
+```
+ /Users/hbagheri/Downloads/95-part-r-00000seq_cluster /Users/hbagheri/Downloads/mis-ann/clstrCount2019V3/part-r-00000_converted /Users/hbagheri/Downloads/mis-ann/seqCount2019V2/part-r-00000_converted_1col_sorted_filtered_cut1
+ 
+```
