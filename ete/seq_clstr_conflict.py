@@ -63,8 +63,9 @@ def verify_conflicts(sequence_file):
                     #check top3 of cluster vs sequence
 
                     try:
-                        if seq_top3[1][0] != clstr_top3[1][0]:
+                        if seq_top3[0][0] != clstr_top3[0][0]:
                             print("#####conflicts: ")
+                            print(seq_top3[0][0],clstr_top3[0][0] )
                             print(seq_top3, clstr_top3)
                     except:
                         print("error compare seq top3 and clstr top3 ")

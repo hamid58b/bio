@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4a29657c-e8ed-4d28-ab20-7d9833ea8840" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ete/parse_alignment.py" afterPath="$PROJECT_DIR$/ete/parse_alignment.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ete/seq_clstr_conflict.py" afterPath="$PROJECT_DIR$/ete/seq_clstr_conflict.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ete/tmp4.py" afterPath="$PROJECT_DIR$/ete/tmp4.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nr/conflicts.md" afterPath="$PROJECT_DIR$/nr/conflicts.md" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -31,31 +28,11 @@
       <file leaf-file-name="seq_clstr_conflict.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ete/seq_clstr_conflict.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="299">
-              <caret line="49" column="28" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
+            <state relative-caret-position="546">
+              <caret line="63" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pydevd.py" pinned="false" current-in-tab="false">
-        <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="1581" column="0" lean-forward="true" selection-start-line="1581" selection-start-column="0" selection-end-line="1581" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tmp4.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ete/tmp4.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
-              <caret line="5" column="15" lean-forward="false" selection-start-line="5" selection-start-column="15" selection-end-line="5" selection-end-column="15" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -264,7 +241,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.seq_clstr_conflict">
+  <component name="RunManager" selected="Python.tmp4">
     <configuration default="false" name="simulate_nr" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -429,8 +406,8 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.seq_clstr_conflict" />
-        <item index="1" class="java.lang.String" itemvalue="Python.tmp4" />
+        <item index="0" class="java.lang.String" itemvalue="Python.tmp4" />
+        <item index="1" class="java.lang.String" itemvalue="Python.seq_clstr_conflict" />
         <item index="2" class="java.lang.String" itemvalue="Python.parse_alignment" />
         <item index="3" class="java.lang.String" itemvalue="Python.mislabel_nr" />
         <item index="4" class="java.lang.String" itemvalue="Python.simulate_nr" />
@@ -878,14 +855,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ete/tmp4.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="15" lean-forward="false" selection-start-line="5" selection-start-column="15" selection-end-line="5" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/anaconda/lib/python3.6/codecs.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="872">
@@ -893,9 +862,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/ete/tmp4.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="9" column="14" lean-forward="true" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
+        <state relative-caret-position="622">
           <caret line="1581" column="0" lean-forward="true" selection-start-line="1581" selection-start-column="0" selection-end-line="1581" selection-end-column="0" />
           <folding />
         </state>
@@ -903,8 +880,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ete/seq_clstr_conflict.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="49" column="28" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
+        <state relative-caret-position="546">
+          <caret line="63" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>
