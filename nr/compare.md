@@ -14,7 +14,10 @@
 
 ### Methods on running our approach on the SATIVA dataset
 * dataset is RNA
-*
+* commands to generate the cluster at 95% similarity
+  ```
+
+  ```
 
 ### Detect misannotations
 * Example: based on the consensus data the sequence with id UlaSpe11 is misannotated with ```g__Cupriavidus ```. It belongs to cluster id 4576 that most sequences suggest ```g__Burkholderia```  

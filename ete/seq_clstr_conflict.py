@@ -36,6 +36,21 @@ def get_top3_tax(line):
 
     return (taxDic)
 
+def compare_taxa_set(seq_top3, clstr_top3):
+    # [('300852', 4), ('10090', 3), ('146786', 2)]
+    seq_set=set()
+    clstr_set = set()
+    for item in seq_top3:
+        seq_set.add(item[0])
+
+    for item in clstr_top3:
+        clstr_set.add(item[0])
+    print(seq_set, clstr_set)
+    common_taxa = len (seq_set.intersection(clstr_set))
+    return (common_taxa)
+
+
+
 def verify_conflicts(sequence_file):
     taxDic = dict()
     with open(sequence_file, "r") as seq_file:
@@ -61,14 +76,25 @@ def verify_conflicts(sequence_file):
 
 
                     #check top3 of cluster vs sequence
-
+                    #TODO: check top1, top2, top3 if they are the same or not?
                     try:
-                        if seq_top3[0][0] != clstr_top3[0][0]:
-                            print("#####conflicts: ")
-                            print(seq_top3[0][0],clstr_top3[0][0] )
-                            print(seq_top3, clstr_top3)
+                        print(row_id, clstr_id)
+                        print ("common" + str(compare_taxa_set(seq_top3,clstr_top3)))
                     except:
-                        print("error compare seq top3 and clstr top3 ")
+                        print("error compare 2 sets ")
+
+                    # try:
+                    #     if seq_top3[0][0] != clstr_top3[0][0]:
+                    #         print("#####conflicts1: ")
+                    #         print(seq_top3[0][0],clstr_top3[0][0] )
+                    #         print(seq_top3, clstr_top3)
+                    #
+                    # except:
+                    #     print("error compare seq top3 and clstr top3 ")
+
+
+
+
                 else:
                     print("seq id is not in a dictionary file")
 read_seq_cluster(sys.argv[1])

@@ -49,9 +49,10 @@ output:
   - part-r-00000_converted
   - part-r-00000_converted_1col_sorted_filtered_cut1
 
-* command to run conflicts
+*
+* Code and prameters to run conflicts
 
 ```
  /Users/hbagheri/Downloads/95-part-r-00000seq_cluster /Users/hbagheri/Downloads/mis-ann/clstrCount2019V3/part-r-00000_converted /Users/hbagheri/Downloads/mis-ann/seqCount2019V2/part-r-00000_converted_1col_sorted_filtered_cut1
- 
+
 ```
