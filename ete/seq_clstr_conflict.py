@@ -79,6 +79,7 @@ def verify_conflicts(sequence_file):
                     #TODO: check top1, top2, top3 if they are the same or not?
                     try:
                         print(row_id, clstr_id)
+                        print(seq_top3, clstr_top3)
                         print ("common" + str(compare_taxa_set(seq_top3,clstr_top3)))
                     except:
                         print("error compare 2 sets ")
