@@ -27,3 +27,9 @@ WP_005594834:45658=1;870967=1
 * find protein ids that have misannotations: ``` python get_misann_ids.py . ```. Basically it iterates over the folder and get the file name that are IDs of detected mislabeled.
 * we need to remove those IDs that already are suspicious, make sure we havre a verified sample of RefSeq: ``` python sample_verified.py misannotated_keys sample_RefSeq  ```
 * Now, we mislabel the sample_verified file by adding taxa from other phylum (make it dirty or add misannotation)
+
+* location on the GitHub repo:
+
+### Calculate Precision and Recall on the simulated dataset
+* 50% of data are mislabeled purposefully
+* False positives (FP)
